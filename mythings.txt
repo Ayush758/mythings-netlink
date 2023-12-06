@@ -1,0 +1,5 @@
+minikube dashboard -
+http://127.0.0.1:55996/api/v1/namespaces/kubernetes-dashboard/services/http:kubernetes-dashboard:/proxy/#/cronjob?namespace=default
+
+jenkins dashboard- 
+http://127.0.0.1:54873/

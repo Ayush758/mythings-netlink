@@ -1,0 +1,399 @@
+configmap 
+secret
+mysql deployment file changes
+
+kubectl describe sa my-service-account --na... by Aayush Verma
+11/8 12:32 PM
+Aayush Verma
+kubectl describe sa my-service-account --namespace=my-namespace
+
+kubectl describe secrets $(kubectl describe... by Aayush Verma
+11/8 1:17 PM
+Aayush Verma
+kubectl describe secrets $(kubectl describe serviceaccount my-service-account-secret --namespace=my-namespace | grep Token | awk '{print $2}') --namespace=my-namespace
+
+kubectl create rolebinding my-service-accou... by Aayush Verma
+11/8 1:24 PM
+Aayush Verma
+kubectl create rolebinding my-service-account-admin-binding --clusterrole=admin --serviceaccount=my-namespace:my-service-account --namespace=my-namespace
+
+kubectl get sa -A by Aayush Verma
+11/8 1:30 PM
+Aayush Verma
+kubectl get sa -A
+
+eyJhbGciOiJSUzI1NiIsImtpZCI6Ind3bndPbVAzU2J... by Aayush Verma
+11/8 1:34 PM
+Aayush Verma
+eyJhbGciOiJSUzI1NiIsImtpZCI6Ind3bndPbVAzU2JYcjZ0bmQ5bkt3SHBlQkNVQWZYQWpMamplREFDV2ZHbjQifQ.eyJhdWQiOlsiaHR0cHM6Ly9rdWJlcm5ldGVzLmRlZmF1bHQuc3ZjLmNsdXN0ZXIubG9jYWwiXSwiZXhwIjoxNjk5NDM0NDU2LCJpYXQiOjE2OTk0MzA4NTYsImlzcyI6Imh0dHBzOi8va3ViZXJuZXRlcy5kZWZhdWx0LnN2Yy5jbHVzdGVyLmxvY2FsIiwia3ViZXJuZXRlcy5pbyI6eyJuYW1lc3BhY2UiOiJteS1uYW1lc3BhY2UiLCJzZXJ2aWNlYWNjb3VudCI6eyJuYW1lIjoibXktc2VydmljZS1hY2NvdW50IiwidWlkIjoiZDQ2MDBkNDEtNTA0OC00N2RkLWEyODItODk5NTQ1YTNjN2I1In19LCJuYmYiOjE2OTk0MzA4NTYsInN1YiI6InN5c3RlbTpzZXJ2aWNlYWNjb3VudDpteS1uYW1lc3BhY2U6bXktc2VydmljZS1hY2NvdW50In0.bdagIb9H8v1BVM2wEEgxHuCOv-PNG6D4Y9jq08lMYYnmpad2jmQCxWUwmxiXHVrHaO-LlCuwhNUaGBbGpNgq_aau6t7LqRzDVaLa-LHLaoPd6z6BT_Qd9EUuByfOrwXejj6ULoqxCQ3EGInINTjIJFZdEAjIani47qeQkPkgddg4oU0lqbMHvqZzQAl6STMZt4FLzm3C9MI4ifFtNH3NN6Pvk0q1qfL4NqjC5FiLWdZYuPVj_-e2oh3j7vma_C7HBccBtbDSPBmDoVjQXyO10akfEMIryBdkOs_4dUTd7UIaaNKY0Tz4KUriva2v9i78JjXnM2iKfda58y_E3abxjg
+
+kubectl port-forward service/jenkins-servic... by Aayush Verma
+11/8 1:52 PM
+Aayush Verma
+kubectl port-forward service/jenkins-service-clusterip 8080:8080
+
+Link https://geekdudes.wordpress.com/2020/0... by Aayush Verma
+11/8 4:29 PM
+Aayush Verma
+https://geekdudes.wordpress.com/2020/01/03/minikube-configure-jenkins-kubernetes-plugin/
+November 9
+1 hpa 2 role based authentication in jenk... by Aayush Verma
+11/9 2:46 PM
+Aayush Verma
+1 hpa
+2 role based authentication in jenkins. with 4 user and and create 4 5  jobs and
+and give them permiession differently.
+ 
+not to delete
+ 
+3 find application with mysql and mongo in it and do crud operations. use config maps to store credentials
+
+Tuesday
+/c/Users/Aayushv/.kube by Aayush Verma
+Tuesday 2:50 PM
+Aayush Verma
+/c/Users/Aayushv/.kube
+
+/c/Users/Aayushv/.minikube/profiles/ayush-c... by Aayush Verma
+Tuesday 2:51 PM
+Aayush Verma
+/c/Users/Aayushv/.minikube/profiles/ayush-context
+
+cat client.key | base64 -w 0; echo by Aayush Verma
+Tuesday 2:51 PM
+Aayush Verma
+cat client.key | base64 -w 0; echo
+cat client.crt | base64 -w 0; echo by Aayush Verma
+Tuesday 2:51 PM
+Edited
+Aayush Verma
+cat client.crt | base64 -w 0; echo
+\ca.crt   by Aayush Verma
+Tuesday 2:58 PM
+Aayush Verma
+\ca.crt
+ 
+apiVersion: v1 clusters: - cluster:  ... by Aayush Verma
+Tuesday 2:58 PM
+Aayush Verma
+apiVersion: v1
+clusters:
+- cluster:
+    certificate-authority: C:\Users\Aayushv\.minikube\ca.crt
+    extensions:
+    - extension:
+        last-update: Fri, 20 Oct 2023 15:49:26 IST
+        provider: minikube.sigs.k8s.io
+        version: v1.31.2
+      name: cluster_info
+    server: https://127.0.0.1:51788
+  name: ayush-context
+- cluster:
+    certificate-authority: C:\Users\Aayushv\.minikube\ca.crt
+    extensions:
+    - extension:
+        last-update: Mon, 06 Nov 2023 11:09:40 IST
+        provider: minikube.sigs.k8s.io
+        version: v1.31.2
+      name: cluster_info
+    server: https://127.0.0.1:49248
+  name: minikube
+contexts:
+- context:
+    cluster: ayush-context
+    extensions:
+    - extension:
+        last-update: Fri, 20 Oct 2023 15:49:26 IST
+        provider: minikube.sigs.k8s.io
+        version: v1.31.2
+      name: context_info
+    namespace: default
+    user: ayush-context
+  name: ayush-context
+- context:
+    cluster: minikube
+    extensions:
+    - extension:
+        last-update: Mon, 06 Nov 2023 11:09:40 IST
+        provider: minikube.sigs.k8s.io
+        version: v1.31.2
+      name: context_info
+    namespace: default
+    user: minikube
+  name: minikube
+current-context: minikube
+kind: Config
+preferences: {}
+users:
+- name: ayush-context
+  user:
+    client-certificate: C:\Users\Aayushv\.minikube\profiles\ayush-context\client.crt
+    client-key: C:\Users\Aayushv\.minikube\profiles\ayush-context\client.key
+- name: minikube
+  user:
+    client-certificate: C:\Users\Aayushv\.minikube\profiles\minikube\client.crt
+    client-key: C:\Users\Aayushv\.minikube\profiles\minikube\client.key
+
+1 /c/Users/Aayushv/.minikube 2 cat ca.crt... by Aayush Verma
+Tuesday 3:21 PM
+Aayush Verma
+1 /c/Users/Aayushv/.minikube
+2 cat ca.crt
+3 cat ca.crt | base64 -w 0; echo
+4 cd /c/Users/Aayushv/.minikube/profiles/minikube
+5 cat client.crt | base64 -w 0; echo
+6 cat client.key | base64 -w 0; echo
+ 
+apiVersion: v1
+clusters:
+- cluster:
+    certificate-authority-data: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSURCakNDQWU2Z0F3SUJBZ0lCQVRBTkJna3Foa2lHOXcwQkFRc0ZBREFWTVJNd0VRWURWUVFERXdwdGFXNXAKYTNWaVpVTkJNQjRYRFRJek1UQXdPVEV3TkRZMU0xb1hEVE16TVRBd056RXdORFkxTTFvd0ZURVRNQkVHQTFVRQpBeE1LYldsdWFXdDFZbVZEUVRDQ0FTSXdEUVlKS29aSWh2Y05BUUVCQlFBRGdnRVBBRENDQVFvQ2dnRUJBS3VQCnZBT05uYXIwM2xrNm91VFIwSzUvSEQ3bFNUeDVHZ2tnUVpGOGs3Rmhmbk5HN2NXQWtBekhNYkZkOURXMGFiQjAKc1doQW5yTDVPVGFuUUYvVXVLeDZwNEE4RDZrcXpCcC9MK2h0NGEvNjVZaXl2Vk1ac3Q4bVBDanZRcFZwMEJWNgptb3pGdzlOQS9kWk1MRllPZC9ZZkxIZlFLN3kyM20rSndIOC9MekF3SklpNkFWbXRaSmZ0Y21zRWxRL1NIdmVKCjVOK3lyRzJhVkNQaG5udjhMSndmeW4yVUhsdTg4dE9SeC9kVDF5Vk1aelkzRVdza0tIc291WUFYM0R3UlRON0kKcWxDenpzL2tYNU55MFBpTEQxdTJtL21ESnNDU29pOUlCa1B3T3RkczFFTzc3aG84Rnhxb3NmSTgvZi95WVVuNwpjTWRZQVZ4Mm5MRGlsMWxMbzMwQ0F3RUFBYU5oTUY4d0RnWURWUjBQQVFIL0JBUURBZ0trTUIwR0ExVWRKUVFXCk1CUUdDQ3NHQVFVRkJ3TUNCZ2dyQmdFRkJRY0RBVEFQQmdOVkhSTUJBZjhFQlRBREFRSC9NQjBHQTFVZERnUVcKQkJTU1JvK0hWUy85QUZLWTg0VzgvejZuSnloODhEQU5CZ2txaGtpRzl3MEJBUXNGQUFPQ0FRRUFrSnN5Z2Q5TAovRGpyTmNjaWV5Z0xDNVpsRzI0aEV2a3BoRUV6U0drUHBKdTNyS0lOSmt1RmN1NlpDdHp6ajQrSEJUMUZKSGs3CmRuRHgvTnRWL1RjZFlMbUpVcENxN1BLZ3djWDVnMzFmU25Fbm81M0IvUGlsZk9lc2I2UUdjbFdlOG82eWZER1cKMmMzZm8xdTdmSHV5cHhxVVdvbFRxeE9sNjFmeEREVTNjSG1CdlZIYTZGTzRnVnBwVHZJSjhxaWNtSmZoRUdjagpyR1A2bldlS0ZXb3NaTXlicW9Ea01JNlVUbGd5YzNBSGNicHdHQ3BwdHYxT05QSzJoVTJGK0NRSDIxWTA5dVhTCkN0WDBMNldmMEJlM2wwTUltdC9YOUtJVUR0RU45dCtWWm53V1NDdWNFeGFQUGRTWDEyb1l5RTlFTTRDR0hweVIKK2ZYWkg1WGgxeHp0Y2c9PQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==
+ 
+    extensions:
+    - extension:
+        last-update: Fri, 20 Oct 2023 15:49:26 IST
+        provider: minikube.sigs.k8s.io
+        version: v1.31.2
+      name: cluster_info
+    server: https://127.0.0.1:51788
+  name: ayush-context
+- cluster:
+    certificate-authority: C:\Users\Aayushv\.minikube\ca.crt
+    extensions:
+    - extension:
+        last-update: Mon, 06 Nov 2023 11:09:40 IST
+        provider: minikube.sigs.k8s.io
+        version: v1.31.2
+      name: cluster_info
+    server: https://127.0.0.1:49248
+  name: minikube
+contexts:
+- context:
+    cluster: ayush-context
+    extensions:
+    - extension:
+        last-update: Fri, 20 Oct 2023 15:49:26 IST
+        provider: minikube.sigs.k8s.io
+        version: v1.31.2
+      name: context_info
+    namespace: default
+    user: ayush-context
+  name: ayush-context
+- context:
+    cluster: minikube
+    extensions:
+    - extension:
+        last-update: Mon, 06 Nov 2023 11:09:40 IST
+        provider: minikube.sigs.k8s.io
+        version: v1.31.2
+      name: context_info
+    namespace: default
+    user: minikube
+  name: minikube
+current-context: minikube
+kind: Config
+preferences: {}
+users:
+- name: ayush-context
+  user:
+    client-certificate: C:\Users\Aayushv\.minikube\profiles\ayush-context\client.crt
+    client-key: C:\Users\Aayushv\.minikube\profiles\ayush-context\client.key
+- name: minikube
+  user:
+    client-certificate-data: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSURJVENDQWdtZ0F3SUJBZ0lCQWpBTkJna3Foa2lHOXcwQkFRc0ZBREFWTVJNd0VRWURWUVFERXdwdGFXNXAKYTNWaVpVTkJNQjRYRFRJek1URXdNVEV3TWpneE9Wb1hEVEkyTVRFd01URXdNamd4T1Zvd01URVhNQlVHQTFVRQpDaE1PYzNsemRHVnRPbTFoYzNSbGNuTXhGakFVQmdOVkJBTVREVzFwYm1scmRXSmxMWFZ6WlhJd2dnRWlNQTBHCkNTcUdTSWIzRFFFQkFRVUFBNElCRHdBd2dnRUtBb0lCQVFDaXdBbnNyMDhPVXNHL1ZOcVRUZGU0Z0FwYmIyYisKZVNSOEptb0dkOVJ3eHZMU01FVTNoS29KZEdseUN0YUpjMHVWWUJGTWJLdXhkVHlsQVFVL3grY3I3MmhFV2dsLwpXanFhSW5NRzJYNlRqWWR2RHFja0ZpT0h0NmN4QitiVmI0UVh2cVhub1ZTNEU3VENSQnRkWFVVT2J0MFJGMlB1CnplSTJhenpudU9ROUJaOWlEdXNqVVFBdkk5Z2FMM3JhbUlYQm1GMGJuNjU1YStXVVc4QlJMN2F5ZnpYYURPeWIKODNjb1NUbXIwc1ZLMWRER0R3UHZiQVBZSjZucCs1MFEvdEdnanovWFBpTVd6ay9oVS8xeXJ2Ynk2MUVCTEsragpzUXl1QkdOdVowaElxMks2dC9QSEgvQThRYmRxdUE3RktVeFRoRm40VWlpUlNJUFJYQ0NKS1UwVEFnTUJBQUdqCllEQmVNQTRHQTFVZER3RUIvd1FFQXdJRm9EQWRCZ05WSFNVRUZqQVVCZ2dyQmdFRkJRY0RBUVlJS3dZQkJRVUgKQXdJd0RBWURWUjBUQVFIL0JBSXdBREFmQmdOVkhTTUVHREFXZ0JTU1JvK0hWUy85QUZLWTg0VzgvejZuSnloOAo4REFOQmdrcWhraUc5dzBCQVFzRkFBT0NBUUVBR2hmSW8wcHF6T2JNWm0xYUtpek55Y2hZQ0JvS1RXWkp3QXQzCklZSGZENXhXaktOVWNhZG4yZFV3NWFnZDJaeC9NSlYza0hBLzVTa1A0bDl2WEJ2dlBYUGhXQVcwcGlSVFJYWjcKc2IvUk83K1dzQ3Qydjh3dXEybFVxSlNxM2JwbzlPcG9rWUZTTWxaYXFzdGxIdDlrRnFDRFdnbnl4RVhBblAzdApYMG1sS1BsNkg2ek1NZDBFRTl1K0h1ZVpDZ08yaGovOEN6K3lIVy9qVDR5NnhqTjBGQ2N3QmhuL016NDJOWXBYCmJPTFp1dGY3NVI1MVpZRk1xTTFWTHBCU3cvMFdWQkVqemMybW1jZEplRzNzZmtQK083ZHZEWkZnN0NMT2RNTnQKNzRJRThFM0t3REc3bHN4UndHdlhHNWcvTVZzSzJvZFNWTWFDTW1aSTlBSTlDL2tMNkE9PQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==
+    client-key-data: LS0tLS1CRUdJTiBSU0EgUFJJVkFURSBLRVktLS0tLQpNSUlFb3dJQkFBS0NBUUVBb3NBSjdLOVBEbExCdjFUYWswM1h1SUFLVzI5bS9ua2tmQ1pxQm5mVWNNYnkwakJGCk40U3FDWFJwY2dyV2lYTkxsV0FSVEd5cnNYVThwUUVGUDhmbksrOW9SRm9KZjFvNm1pSnpCdGwrazQySGJ3Nm4KSkJZamg3ZW5NUWZtMVcrRUY3Nmw1NkZVdUJPMHdrUWJYVjFGRG03ZEVSZGo3czNpTm1zODU3amtQUVdmWWc3cgpJMUVBTHlQWUdpOTYycGlGd1poZEc1K3VlV3ZsbEZ2QVVTKzJzbjgxMmd6c20vTjNLRWs1cTlMRlN0WFF4ZzhECjcyd0QyQ2VwNmZ1ZEVQN1JvSTgvMXo0akZzNVA0VlA5Y3E3Mjh1dFJBU3l2bzdFTXJnUmpibWRJU0t0aXVyZnoKeHgvd1BFRzNhcmdPeFNsTVU0UlorRklva1VpRDBWd2dpU2xORXdJREFRQUJBb0lCQUVrSG8yeHh2aWZQT3VHQQpVaFNIZWFWd3p6VDRhRjhJUFRiNGhkc2hLbEx3ODBVZUkvRWx0cWRIZFltWEUyM2FMckI0eTBwZitTdElVRTQ2Cmh3QjMwMlFEcWVZQ0FRRUVuQWRPTGcrRXlTZXMrbmo3T2tVWEtocGNic214b2dOa1p3SEFxdkdsa3o2R21UWVQKR2JScmhmRlVEaDc5UC9xSXFGbURCWEYxcGZVN09XVGhlallTYTVKSllJek93YlFSNXRmWFdDWCtIMUZqSnpQZApmbE96ZWZuSWwybEFCaXpxV0xTLzhBclcyemU4aFo4ckt2VWRRK29Yczlseis0dERBTWwvZnJVbkZ5ZjVWOEZJCjAwNS9UTVJkS2VaMEVEYmMrR1ptVk0xSHRQUHlPSUYvM3M5NW82ZlV5ZlNVRUJlOVFZVTB2dlhVbkQrdC9VZmQKVm01c2VRRUNnWUVBMGxDcFpnakZzbUFxSlNCTFhWYUJNSjlpSHJ6YlZXWGRZWUVUakpXTmFYNTc4Y1ZTU2s1ZgoremM4UXFSYUllNFdLbnM5dGlwbUlKcFhDOEpMbVRvVFZIOXg1Z2ZoU3Rjc1BPbmEwVC9aOVF4RDRJREtERzJFCmNWcVFDeitCaDJhOStTNnByZVhmMFBNenZ0T1RHS29KK2M3K0M0eWtVZWt3cnFKS2ZPNEhhcFVDZ1lFQXhocGEKOFVLTUlCVkZCcUYwQWFLUC9yR3dIWVhad0VuYTZDaHBlS3JENDRNYVBLN1phNWVIdkV3MGVySXJzNnVuY0FLRwpBT0l6V3E1a2paSUgyN3VpSHlVREdDcjFxMFRJUFZycVhtcGlBSG50ZzJtUGtVbldaYy83eEtiOUlpT2JJS3VaCmpWWlFITVAzaC9nYURvUk5uMkU3VmlEYWg2Vi9OTkhNQTFSYUZ3Y0NnWUVBalhVVGV6MkxPMTdTK2dXdXF5anoKMi9CWDNyVElFYmhpSHFMaXN6d2owVUR4dkx3cmpTOEovNzQzR2R2UmcrRFBwK01jcnRuMXR4Z1lWQ0JyR0xTbgpLNzVNclp1L1BNZGRTZHRCQWwwZ0RHSWpoVzBhZVNGd1k0MjJOTnFTRkxCV05yUGNETXNBcjFubEJBVHFlenhqCldWS1FMTlI3OFZ3WEVsNjJHekUrYThFQ2dZQk5sZGJXTkV6eTU4R2Y1aTJyMGtINDZ4aGhoNkdQZUoxZVhTMXAKajkrbVJCdExkdU02Q3graTlHbDlRRGh6WnAvdDgxOE9DNGszVTZPWCtvQlBZMzRNR28vS3NGQ0U0aXhXTXp3awovQjhqdHB6NTRhYlRyUXBsMTMzd044SmQwM29XNG40QjU3TDZnUmw1ekFaUWR5cDdhRFkzOWlnQUJpWDZ4c3ZTCjVmOWVrd0tCZ0hCNVZLUFVDalBrdGNQc2pNVkEwZk13bVRjRVU0cmNSS25OTDkzNnVaV0x2akEyM3RIamJCZlQKWGhTakdRRjRFdXJHYndCOXNyRW04WVVvM2owR1pkRy9JWVlSS1loR0JISlpyN21XMWp0MG1sU0hoeXMxQmNsVApZekNhOTBJWE56OVFBQUtJNlRYOVJHbWFkdXNQNnBuOXgzNEJGRFdVZjF3c1dtZFdTb3haCi0tLS0tRU5EIFJTQSBQUklWQVRFIEtFWS0tLS0tCg==
+
+ 
+apiVersion: v1 clusters: - cluster:  ... by Aayush Verma
+Tuesday 5:10 PM
+Aayush Verma
+apiVersion: v1
+clusters:
+- cluster:
+    certificate-authority-data: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSURCakNDQWU2Z0F3SUJBZ0lCQVRBTkJna3Foa2lHOXcwQkFRc0ZBREFWTVJNd0VRWURWUVFERXdwdGFXNXAKYTNWaVpVTkJNQjRYRFRJek1UQXdPVEV3TkRZMU0xb1hEVE16TVRBd056RXdORFkxTTFvd0ZURVRNQkVHQTFVRQpBeE1LYldsdWFXdDFZbVZEUVRDQ0FTSXdEUVlKS29aSWh2Y05BUUVCQlFBRGdnRVBBRENDQVFvQ2dnRUJBS3VQCnZBT05uYXIwM2xrNm91VFIwSzUvSEQ3bFNUeDVHZ2tnUVpGOGs3Rmhmbk5HN2NXQWtBekhNYkZkOURXMGFiQjAKc1doQW5yTDVPVGFuUUYvVXVLeDZwNEE4RDZrcXpCcC9MK2h0NGEvNjVZaXl2Vk1ac3Q4bVBDanZRcFZwMEJWNgptb3pGdzlOQS9kWk1MRllPZC9ZZkxIZlFLN3kyM20rSndIOC9MekF3SklpNkFWbXRaSmZ0Y21zRWxRL1NIdmVKCjVOK3lyRzJhVkNQaG5udjhMSndmeW4yVUhsdTg4dE9SeC9kVDF5Vk1aelkzRVdza0tIc291WUFYM0R3UlRON0kKcWxDenpzL2tYNU55MFBpTEQxdTJtL21ESnNDU29pOUlCa1B3T3RkczFFTzc3aG84Rnhxb3NmSTgvZi95WVVuNwpjTWRZQVZ4Mm5MRGlsMWxMbzMwQ0F3RUFBYU5oTUY4d0RnWURWUjBQQVFIL0JBUURBZ0trTUIwR0ExVWRKUVFXCk1CUUdDQ3NHQVFVRkJ3TUNCZ2dyQmdFRkJRY0RBVEFQQmdOVkhSTUJBZjhFQlRBREFRSC9NQjBHQTFVZERnUVcKQkJTU1JvK0hWUy85QUZLWTg0VzgvejZuSnloODhEQU5CZ2txaGtpRzl3MEJBUXNGQUFPQ0FRRUFrSnN5Z2Q5TAovRGpyTmNjaWV5Z0xDNVpsRzI0aEV2a3BoRUV6U0drUHBKdTNyS0lOSmt1RmN1NlpDdHp6ajQrSEJUMUZKSGs3CmRuRHgvTnRWL1RjZFlMbUpVcENxN1BLZ3djWDVnMzFmU25Fbm81M0IvUGlsZk9lc2I2UUdjbFdlOG82eWZER1cKMmMzZm8xdTdmSHV5cHhxVVdvbFRxeE9sNjFmeEREVTNjSG1CdlZIYTZGTzRnVnBwVHZJSjhxaWNtSmZoRUdjagpyR1A2bldlS0ZXb3NaTXlicW9Ea01JNlVUbGd5YzNBSGNicHdHQ3BwdHYxT05QSzJoVTJGK0NRSDIxWTA5dVhTCkN0WDBMNldmMEJlM2wwTUltdC9YOUtJVUR0RU45dCtWWm53V1NDdWNFeGFQUGRTWDEyb1l5RTlFTTRDR0hweVIKK2ZYWkg1WGgxeHp0Y2c9PQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==
+ 
+    extensions:
+    - extension:
+        last-update: Fri, 20 Oct 2023 15:49:26 IST
+        provider: minikube.sigs.k8s.io
+        version: v1.31.2
+      name: cluster_info
+    server: https://127.0.0.1:51788
+  name: ayush-context
+- cluster:
+    certificate-authority-data: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSURCakNDQWU2Z0F3SUJBZ0lCQVRBTkJna3Foa2lHOXcwQkFRc0ZBREFWTVJNd0VRWURWUVFERXdwdGFXNXAKYTNWaVpVTkJNQjRYRFRJek1UQXdPVEV3TkRZMU0xb1hEVE16TVRBd056RXdORFkxTTFvd0ZURVRNQkVHQTFVRQpBeE1LYldsdWFXdDFZbVZEUVRDQ0FTSXdEUVlKS29aSWh2Y05BUUVCQlFBRGdnRVBBRENDQVFvQ2dnRUJBS3VQCnZBT05uYXIwM2xrNm91VFIwSzUvSEQ3bFNUeDVHZ2tnUVpGOGs3Rmhmbk5HN2NXQWtBekhNYkZkOURXMGFiQjAKc1doQW5yTDVPVGFuUUYvVXVLeDZwNEE4RDZrcXpCcC9MK2h0NGEvNjVZaXl2Vk1ac3Q4bVBDanZRcFZwMEJWNgptb3pGdzlOQS9kWk1MRllPZC9ZZkxIZlFLN3kyM20rSndIOC9MekF3SklpNkFWbXRaSmZ0Y21zRWxRL1NIdmVKCjVOK3lyRzJhVkNQaG5udjhMSndmeW4yVUhsdTg4dE9SeC9kVDF5Vk1aelkzRVdza0tIc291WUFYM0R3UlRON0kKcWxDenpzL2tYNU55MFBpTEQxdTJtL21ESnNDU29pOUlCa1B3T3RkczFFTzc3aG84Rnhxb3NmSTgvZi95WVVuNwpjTWRZQVZ4Mm5MRGlsMWxMbzMwQ0F3RUFBYU5oTUY4d0RnWURWUjBQQVFIL0JBUURBZ0trTUIwR0ExVWRKUVFXCk1CUUdDQ3NHQVFVRkJ3TUNCZ2dyQmdFRkJRY0RBVEFQQmdOVkhSTUJBZjhFQlRBREFRSC9NQjBHQTFVZERnUVcKQkJTU1JvK0hWUy85QUZLWTg0VzgvejZuSnloODhEQU5CZ2txaGtpRzl3MEJBUXNGQUFPQ0FRRUFrSnN5Z2Q5TAovRGpyTmNjaWV5Z0xDNVpsRzI0aEV2a3BoRUV6U0drUHBKdTNyS0lOSmt1RmN1NlpDdHp6ajQrSEJUMUZKSGs3CmRuRHgvTnRWL1RjZFlMbUpVcENxN1BLZ3djWDVnMzFmU25Fbm81M0IvUGlsZk9lc2I2UUdjbFdlOG82eWZER1cKMmMzZm8xdTdmSHV5cHhxVVdvbFRxeE9sNjFmeEREVTNjSG1CdlZIYTZGTzRnVnBwVHZJSjhxaWNtSmZoRUdjagpyR1A2bldlS0ZXb3NaTXlicW9Ea01JNlVUbGd5YzNBSGNicHdHQ3BwdHYxT05QSzJoVTJGK0NRSDIxWTA5dVhTCkN0WDBMNldmMEJlM2wwTUltdC9YOUtJVUR0RU45dCtWWm53V1NDdWNFeGFQUGRTWDEyb1l5RTlFTTRDR0hweVIKK2ZYWkg1WGgxeHp0Y2c9PQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==
+ 
+    extensions:
+    - extension:
+        last-update: Mon, 06 Nov 2023 11:09:40 IST
+        provider: minikube.sigs.k8s.io
+        version: v1.31.2
+      name: cluster_info
+    server: https://127.0.0.1:49248
+  name: minikube
+contexts:
+- context:
+    cluster: ayush-context
+    extensions:
+    - extension:
+        last-update: Fri, 20 Oct 2023 15:49:26 IST
+        provider: minikube.sigs.k8s.io
+        version: v1.31.2
+      name: context_info
+    namespace: default
+    user: ayush-context
+  name: ayush-context
+- context:
+    cluster: minikube
+    extensions:
+    - extension:
+        last-update: Mon, 06 Nov 2023 11:09:40 IST
+        provider: minikube.sigs.k8s.io
+        version: v1.31.2
+      name: context_info
+    namespace: default
+    user: minikube
+  name: minikube
+current-context: minikube
+kind: Config
+preferences: {}
+users:
+- name: ayush-context
+  user:
+    client-certificate: C:\Users\Aayushv\.minikube\profiles\ayush-context\client.crt
+    client-key: C:\Users\Aayushv\.minikube\profiles\ayush-context\client.key
+- name: minikube
+  user:
+    client-certificate-data: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSURJVENDQWdtZ0F3SUJBZ0lCQWpBTkJna3Foa2lHOXcwQkFRc0ZBREFWTVJNd0VRWURWUVFERXdwdGFXNXAKYTNWaVpVTkJNQjRYRFRJek1URXdNVEV3TWpneE9Wb1hEVEkyTVRFd01URXdNamd4T1Zvd01URVhNQlVHQTFVRQpDaE1PYzNsemRHVnRPbTFoYzNSbGNuTXhGakFVQmdOVkJBTVREVzFwYm1scmRXSmxMWFZ6WlhJd2dnRWlNQTBHCkNTcUdTSWIzRFFFQkFRVUFBNElCRHdBd2dnRUtBb0lCQVFDaXdBbnNyMDhPVXNHL1ZOcVRUZGU0Z0FwYmIyYisKZVNSOEptb0dkOVJ3eHZMU01FVTNoS29KZEdseUN0YUpjMHVWWUJGTWJLdXhkVHlsQVFVL3grY3I3MmhFV2dsLwpXanFhSW5NRzJYNlRqWWR2RHFja0ZpT0h0NmN4QitiVmI0UVh2cVhub1ZTNEU3VENSQnRkWFVVT2J0MFJGMlB1CnplSTJhenpudU9ROUJaOWlEdXNqVVFBdkk5Z2FMM3JhbUlYQm1GMGJuNjU1YStXVVc4QlJMN2F5ZnpYYURPeWIKODNjb1NUbXIwc1ZLMWRER0R3UHZiQVBZSjZucCs1MFEvdEdnanovWFBpTVd6ay9oVS8xeXJ2Ynk2MUVCTEsragpzUXl1QkdOdVowaElxMks2dC9QSEgvQThRYmRxdUE3RktVeFRoRm40VWlpUlNJUFJYQ0NKS1UwVEFnTUJBQUdqCllEQmVNQTRHQTFVZER3RUIvd1FFQXdJRm9EQWRCZ05WSFNVRUZqQVVCZ2dyQmdFRkJRY0RBUVlJS3dZQkJRVUgKQXdJd0RBWURWUjBUQVFIL0JBSXdBREFmQmdOVkhTTUVHREFXZ0JTU1JvK0hWUy85QUZLWTg0VzgvejZuSnloOAo4REFOQmdrcWhraUc5dzBCQVFzRkFBT0NBUUVBR2hmSW8wcHF6T2JNWm0xYUtpek55Y2hZQ0JvS1RXWkp3QXQzCklZSGZENXhXaktOVWNhZG4yZFV3NWFnZDJaeC9NSlYza0hBLzVTa1A0bDl2WEJ2dlBYUGhXQVcwcGlSVFJYWjcKc2IvUk83K1dzQ3Qydjh3dXEybFVxSlNxM2JwbzlPcG9rWUZTTWxaYXFzdGxIdDlrRnFDRFdnbnl4RVhBblAzdApYMG1sS1BsNkg2ek1NZDBFRTl1K0h1ZVpDZ08yaGovOEN6K3lIVy9qVDR5NnhqTjBGQ2N3QmhuL016NDJOWXBYCmJPTFp1dGY3NVI1MVpZRk1xTTFWTHBCU3cvMFdWQkVqemMybW1jZEplRzNzZmtQK083ZHZEWkZnN0NMT2RNTnQKNzRJRThFM0t3REc3bHN4UndHdlhHNWcvTVZzSzJvZFNWTWFDTW1aSTlBSTlDL2tMNkE9PQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==
+    client-key-data: LS0tLS1CRUdJTiBSU0EgUFJJVkFURSBLRVktLS0tLQpNSUlFb3dJQkFBS0NBUUVBb3NBSjdLOVBEbExCdjFUYWswM1h1SUFLVzI5bS9ua2tmQ1pxQm5mVWNNYnkwakJGCk40U3FDWFJwY2dyV2lYTkxsV0FSVEd5cnNYVThwUUVGUDhmbksrOW9SRm9KZjFvNm1pSnpCdGwrazQySGJ3Nm4KSkJZamg3ZW5NUWZtMVcrRUY3Nmw1NkZVdUJPMHdrUWJYVjFGRG03ZEVSZGo3czNpTm1zODU3amtQUVdmWWc3cgpJMUVBTHlQWUdpOTYycGlGd1poZEc1K3VlV3ZsbEZ2QVVTKzJzbjgxMmd6c20vTjNLRWs1cTlMRlN0WFF4ZzhECjcyd0QyQ2VwNmZ1ZEVQN1JvSTgvMXo0akZzNVA0VlA5Y3E3Mjh1dFJBU3l2bzdFTXJnUmpibWRJU0t0aXVyZnoKeHgvd1BFRzNhcmdPeFNsTVU0UlorRklva1VpRDBWd2dpU2xORXdJREFRQUJBb0lCQUVrSG8yeHh2aWZQT3VHQQpVaFNIZWFWd3p6VDRhRjhJUFRiNGhkc2hLbEx3ODBVZUkvRWx0cWRIZFltWEUyM2FMckI0eTBwZitTdElVRTQ2Cmh3QjMwMlFEcWVZQ0FRRUVuQWRPTGcrRXlTZXMrbmo3T2tVWEtocGNic214b2dOa1p3SEFxdkdsa3o2R21UWVQKR2JScmhmRlVEaDc5UC9xSXFGbURCWEYxcGZVN09XVGhlallTYTVKSllJek93YlFSNXRmWFdDWCtIMUZqSnpQZApmbE96ZWZuSWwybEFCaXpxV0xTLzhBclcyemU4aFo4ckt2VWRRK29Yczlseis0dERBTWwvZnJVbkZ5ZjVWOEZJCjAwNS9UTVJkS2VaMEVEYmMrR1ptVk0xSHRQUHlPSUYvM3M5NW82ZlV5ZlNVRUJlOVFZVTB2dlhVbkQrdC9VZmQKVm01c2VRRUNnWUVBMGxDcFpnakZzbUFxSlNCTFhWYUJNSjlpSHJ6YlZXWGRZWUVUakpXTmFYNTc4Y1ZTU2s1ZgoremM4UXFSYUllNFdLbnM5dGlwbUlKcFhDOEpMbVRvVFZIOXg1Z2ZoU3Rjc1BPbmEwVC9aOVF4RDRJREtERzJFCmNWcVFDeitCaDJhOStTNnByZVhmMFBNenZ0T1RHS29KK2M3K0M0eWtVZWt3cnFKS2ZPNEhhcFVDZ1lFQXhocGEKOFVLTUlCVkZCcUYwQWFLUC9yR3dIWVhad0VuYTZDaHBlS3JENDRNYVBLN1phNWVIdkV3MGVySXJzNnVuY0FLRwpBT0l6V3E1a2paSUgyN3VpSHlVREdDcjFxMFRJUFZycVhtcGlBSG50ZzJtUGtVbldaYy83eEtiOUlpT2JJS3VaCmpWWlFITVAzaC9nYURvUk5uMkU3VmlEYWg2Vi9OTkhNQTFSYUZ3Y0NnWUVBalhVVGV6MkxPMTdTK2dXdXF5anoKMi9CWDNyVElFYmhpSHFMaXN6d2owVUR4dkx3cmpTOEovNzQzR2R2UmcrRFBwK01jcnRuMXR4Z1lWQ0JyR0xTbgpLNzVNclp1L1BNZGRTZHRCQWwwZ0RHSWpoVzBhZVNGd1k0MjJOTnFTRkxCV05yUGNETXNBcjFubEJBVHFlenhqCldWS1FMTlI3OFZ3WEVsNjJHekUrYThFQ2dZQk5sZGJXTkV6eTU4R2Y1aTJyMGtINDZ4aGhoNkdQZUoxZVhTMXAKajkrbVJCdExkdU02Q3graTlHbDlRRGh6WnAvdDgxOE9DNGszVTZPWCtvQlBZMzRNR28vS3NGQ0U0aXhXTXp3awovQjhqdHB6NTRhYlRyUXBsMTMzd044SmQwM29XNG40QjU3TDZnUmw1ekFaUWR5cDdhRFkzOWlnQUJpWDZ4c3ZTCjVmOWVrd0tCZ0hCNVZLUFVDalBrdGNQc2pNVkEwZk13bVRjRVU0cmNSS25OTDkzNnVaV0x2akEyM3RIamJCZlQKWGhTakdRRjRFdXJHYndCOXNyRW04WVVvM2owR1pkRy9JWVlSS1loR0JISlpyN21XMWp0MG1sU0hoeXMxQmNsVApZekNhOTBJWE56OVFBQUtJNlRYOVJHbWFkdXNQNnBuOXgzNEJGRFdVZjF3c1dtZFdTb3haCi0tLS0tRU5EIFJTQSBQUklWQVRFIEtFWS0tLS0tCg==
+ 
+kubectl config delete-context ayush-context by Aayush Verma
+Tuesday 6:11 PM
+Aayush Verma
+kubectl config delete-context ayush-context
+
+kubectl config get-contexts by Aayush Verma
+Tuesday 6:11 PM
+Aayush Verma
+kubectl config get-contexts
+
+Thursday
+  image   by Aayush Verma
+Thursday 11:03 AM
+Aayush Verma
+ 
+ 
+  image   by Aayush Verma
+Thursday 11:10 AM
+Aayush Verma
+ 
+ 
+apiVersion: apps/v1 kind: Deployment me... by Aayush Verma
+Thursday 11:40 AM
+Aayush Verma
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: php-apache
+spec:
+  selector:
+    matchLabels:
+      run: php-apache
+  template:
+    metadata:
+      labels:
+        run: php-apache
+    spec:
+      containers:
+      - name: php-apache
+        image: registry.k8s.io/hpa-example
+        ports:
+        - containerPort: 80
+        resources:
+          limits:
+            cpu: 500m
+          requests:
+            cpu: 200m
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: php-apache
+  labels:
+    run: php-apache
+spec:
+  ports:
+  - port: 80
+  selector:
+    run: php-apache
+ 
+---
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: php-apache
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: php-apache
+  minReplicas: 1
+  maxReplicas: 10
+  metrics:
+  - type: Resource
+    resource:
+      name: cpu
+      target:
+        type: Utilization
+        averageUtilization: 50
+kubectl get hpa -o yaml by Aayush Verma
+Thursday 12:41 PM
+Aayush Verma
+kubectl get hpa -o yaml
+[11/9 2:46 PM] Aayush Verma 1 hpa 2 role ba... by Aayush Verma
+Thursday 5:22 PM
+Edited
+Aayush Verma
+[11/9 2:46 PM] Aayush Verma
+1 hpa
+2 role based authentication in jenkins. with 3 user and and create 3 4  jobs and
+and give them permiession differently.
+ 
+not to delete
+ 
+3 find application with mysql and mongo in it and do crud operations. use config maps to store credentials
+
+Yesterday
+limited resource me jyda pods up krne with ... by Aayush Verma
+Yesterday 12:50 PM
+Aayush Verma
+limited resource me jyda pods up krne with k8s
+kubectl explain deployment --recursive by Aayush Verma
+Yesterday 4:54 PM
+Aayush Verma
+kubectl explain deployment --recursive
+
+kubectl explain cm --recursive by Aayush Verma
+Yesterday 4:54 PM
+Aayush Verma
+kubectl explain cm --recursive
+
+has context menu
+
+
+
+rs.initiate( {
+_id : "rs0",
+members: [
+{ _id: 0,host: "mongo-0.mongodb.default.svc.cluster.local:27017" },
+{ _id: 1,host: "mongo-1.mongodb.default.svc.cluster.local:27017" },
+{ _id: 2,host: "mongo-2.mongodb.default.svc.cluster.localt:27017" }
+]
+})
+
+rs.status
+rs.conf
+1 mongosh
+2 hostname -f
+
+3 rs.initiate( { _id : "rs0", members: [ { _id: 0, host: "mongo-0.mongodb.default.svc.cluster.local:27017" }, { _id: 1, host: "mongo-1.mongodb.default.svc.cluster.local:27017" }, { _id: 2, host: "mongo-2.mongodb.default.svc.cluster.local:27017" } ] })

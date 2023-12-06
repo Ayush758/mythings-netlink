@@ -1,0 +1,28 @@
+monday - 
+
+1 resolved my minikube issue it throws TCP handshake error 
+2 created HPA for a demo project
+3 alloted differnt permissions for 3 4 users that i created .
+
+tuesday - 
+
+1 created deployment , pv and pvc and service for mysql 
+2 created config maps and secrets for mysql 
+3 created statefullset, pv, pvc and svc for mongodb
+4 created config maps , secret for mongo db
+
+wednesday - 
+
+1 created dockerfile for a demo project petclinic.
+2 deployed a petclinic demo project based on java. 
+3 trying to connect it with mysql but got error.
+4 There is some code side error on the code
+ 
+1 tried another python application to connect it with mysql and dockerize it. i have changed few things on settings.py  
+2 tried node application to connect it with mysql but got issues while connecting 
+
+
+Thursday - 
+1 
+2
+3

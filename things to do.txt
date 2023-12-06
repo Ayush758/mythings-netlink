@@ -1,0 +1,10 @@
+[11/9 2:46 PM] Aayush Verma
+1 hpa
+
+2 role based authentication in jenkins. with 4 user and and create 4 5  jobs and
+
+and give them permiession differently.
+ 
+not to delete
+ 
+3 find application with mysql and mongo in it and do crud operations. use config maps to store credentials
